@@ -30,3 +30,21 @@ class ChangeCurrency:
             return currency_heading.text.strip() == "Select your currency"
         except:
             return False
+
+    def select_currency(self, currency_code):
+        if self.loaded():
+            try:
+                wait = WebDriverWait(self.driver, 10)
+                currency_list = wait.until(
+                    EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'ul.a1b3f50dcd li button')))
+
+                for currency in currency_list:
+                    if currency_code in currency.text:
+                        currency.click()
+                        print(f"Currency '{currency_code}' selected.")
+                        break
+            except:
+                print(f"Failed to select currency '{currency_code}'.")
+        else:
+            print("Currency Page is not loaded yet. Call 'launch()' method first.")
+
