@@ -44,20 +44,16 @@ class ChangeCurrency:
 
                 for currency in currency_list:
                     if currency_code in currency.text:
-                        slash.logger.info(
-                            f"Selecting {currency_code}")
+                        slash.logger.info(f"Selecting {currency_code}")
                         currency.click()
-                        slash.logger.info(
-                            f"Currency "
-                            f"'{currency_code}' selected.")
+                        slash.logger.info\
+                            (f"Currency '{currency_code}' selected.")
                         break
             except:
-                slash.logger.info(
-                    f"Failed to "
-                    f"select currency "
-                    f"'{currency_code}'.")
+                slash.logger.info\
+                    (f"Failed to select currency '{currency_code}'.")
         else:
-            slash.logger.info(
-                "Currency Page is not "
-                "loaded yet. Call 'launch()' "
-                "method first.")
+            slash.logger.info\
+                ("Currency Page is not loaded yet."
+                 " Call 'launch()' method first.")
+

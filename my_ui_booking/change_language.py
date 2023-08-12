@@ -44,20 +44,11 @@ class ChangeLanguage:
 
                 for language in language_list:
                     if language_code in language.text:
-                        slash.logger.info(
-                            f"Selecting {language_code}")
+                        slash.logger.info(f"Selecting {language_code}")
                         language.click()
-                        slash.logger.info(
-                            f"Language "
-                            f"'{language_code}' selected.")
+                        slash.logger.info(f"Language '{language_code}' selected.")
                         break
             except:
-                slash.logger.info(
-                    f"Failed to "
-                    f"select currency "
-                    f"'{language_code}'.")
+                slash.logger.info(f"Failed to select currency '{language_code}'.")
         else:
-            slash.logger.info(
-                "Language Page is not "
-                "loaded yet. Call 'launch()' "
-                "method first.")
+            slash.logger.info("Language Page is not loaded yet. Call 'launch()' method first.")
